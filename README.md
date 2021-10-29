@@ -24,4 +24,4 @@ Start GeoServer:
 
 `docker run -it -e GEOSERVER_DATA_DIR=/var/geoserver -p 8080:8080 geoserver:2.20.0`
 
-Once the container completes starting up, GeoServer can be accessed at http://localhost:8080.
+Once the container completes starting up, GeoServer can be accessed at [http://localhost:8080/geoserver](http://localhost:8080/geoserver).
