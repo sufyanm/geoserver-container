@@ -1,12 +1,14 @@
 FROM amazonlinux:2
 
 ARG GEOSERVER_VERSION=2.20.0
+ARG GEOSERVER_SHA1=e4499ab77d6f4668047ebbcf8f6ff036b92478f7
 
 WORKDIR /tmp
 
 RUN set -eux; \
     yum install -y unzip wget; \
-    wget https://ixpeering.dl.sourceforge.net/project/geoserver/GeoServer/${GEOSERVER_VERSION}/geoserver-${GEOSERVER_VERSION}-war.zip; \
+    wget https://downloads.sourceforge.net/project/geoserver/GeoServer/${GEOSERVER_VERSION}/geoserver-${GEOSERVER_VERSION}-war.zip; \
+    sha1sum geoserver-${GEOSERVER_VERSION}-war.zip | grep $GEOSERVER_SHA1; \
     unzip geoserver-${GEOSERVER_VERSION}-war.zip
 
 # Build final image
