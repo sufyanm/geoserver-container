@@ -24,6 +24,16 @@ Example command to build a GeoServer 2.19.3 image:
 docker build --build-arg GEOSERVER_VERSION=2.19.3 --build-arg GEOSERVER_SHA1=a1793fb57004341b7c94f4b4f09428b2493b9fa6 -t geoserver .
 ```
 
+### Building a nightly build
+
+An image of a GeoServer nightly build can be built by providing the `GEOSERVER_NIGHTLY` build-time variable.
+
+Example command to build an image from the latest main nightly build:
+
+```
+docker build --build-arg GEOSERVER_NIGHTLY=main -t geoserver .
+```
+
 ## Running
 
 Run GeoServer:
